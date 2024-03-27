@@ -2,7 +2,7 @@ name: Generate Podcast Feeds
 on: [push]
 jobs: 
   build:
-    runs-on: ubuntu-latest'
+    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps: 
       - name: Checkout Repo
         uses: actions/checkout/@v3
